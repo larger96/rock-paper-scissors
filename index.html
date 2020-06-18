@@ -32,6 +32,16 @@
                 console.log(capitalize(player) + ' against ' + computer + '. It\'s a draw.');
             }
 
+            function winner(playerScore, compScore) {
+                if (playerScore > compScore) {
+                    console.log("You Win! Congratulations!")
+                } else if (playerScore < compScore) {
+                    console.log("You Lose! Better luck next time.")
+                } else {
+                    console.log("It's a draw.")
+                }
+            }
+
             function playRound(playerSelection, computerSelection) {
                 switch (playerSelection.toLowerCase() + computerSelection) {
                     case "rockScissors":
@@ -58,9 +68,9 @@
                     console.log(capitalize(playerSelection));
                     console.log(computerSelection);
                     playRound(playerSelection, computerSelection);
-                    //console.log(playRound(playerSelection, computerSelection));
                 }
-                console.log(playerScore + ':' + compScore)
+                console.log(playerScore + ':' + compScore);
+                winner(playerScore, compScore);
             }
             console.log(game());
         </script>
